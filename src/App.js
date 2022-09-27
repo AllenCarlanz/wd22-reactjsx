@@ -1,69 +1,31 @@
 import './css/App.css';
-import Login from './components/Login';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
-let user = {
-  name: "Allen",
-  position: "Instructor",
-  avatar: "https://i.postimg.cc/63wdNgF7/user-sign-icon-person-symbol-human-avatar-vector-12693195.jpg"
-}
-
-const products = [
-  { name: 'Soap', price: 30 },
-  { name: 'Shampoo', price: 100 },
-  { name: 'Garlic', price: 80 }
-];
-
-function UserDetails({ props }) {
+function ContactForm() {
   return (
     <>
-      <img src={user.avatar} alt="avatar" />
-      <p>Position: {user.position}</p>
-      <p>Hiring Date: {props.hiringDate}</p>
-      <p>Gender: {props.gender}</p>
-      <hr />
+      <div className="contact-page">
+        <h1>Contact Us!</h1>
+        <form>
+          <input type="text" placeholder="Full name" />
+          <input type="text" placeholder="E-mail address" />
+          <input type="text" placeholder="Phone #" />
+          <button type="submit">Send</button>
+        </form>
+      </div>
     </>
   );
-}
-
-function List() {
-  return (
-    <>
-      <h1 className="list-head">{user.name}'s Grocery List</h1>
-      <ul>
-        <ListItem props={{ name: "Soap", price: 20 }} />
-        <ListItem props={{ name: "Shampoo", price: 100 }} />
-        <ListItem props={{ name: "Egg", price: 80 }} />
-      </ul>
-    </>
-  );
-}
-
-function ListItem({ props }) {
-  return <li>{props.name} - {props.price}</li>;
 }
 
 function App() {
-  let info = {
-    hiringDate: "August 2022",
-    gender: "Male"
-  };
-
-  let isLoggedIn = true;
-  let content;
-
-  if (isLoggedIn) {
-    content =
-      <>
-        <UserDetails props={info} />
-        <List />
-      </>;
-  }
-  else {
-    content = <Login />;
-  }
-
-  return content;
-
+  return (
+    <>
+      <Header />
+      <ContactForm />
+      <Footer />
+    </>
+  );
 }
 
 
