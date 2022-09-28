@@ -1,28 +1,29 @@
 import './css/App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
-
-function ContactForm() {
-  return (
-    <>
-      <div className="contact-page">
-        <h1>Contact Us!</h1>
-        <form>
-          <input type="text" placeholder="Full name" />
-          <input type="text" placeholder="E-mail address" />
-          <input type="text" placeholder="Phone #" />
-          <button type="submit">Send</button>
-        </form>
-      </div>
-    </>
-  );
-}
+import { useState } from 'react';
 
 function App() {
+
+  const [names, setNames] = useState(["Person A", "Person B"]);
+
+  const nameList = names.map(name =>
+    <li key={name}>{name}</li>
+  );
+
+  function addStudent() {
+    setNames([...names, 'new student']);
+  }
+
   return (
     <>
       <Header />
-      <ContactForm />
+      <h1>Student List</h1>
+      <ul>
+        {nameList}
+      </ul>
+      <input type="text" />
+      <button onClick={addStudent}>Add Student!</button>
       <Footer />
     </>
   );

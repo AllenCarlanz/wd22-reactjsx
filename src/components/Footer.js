@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
     return (
         <div className="footer">
-            <div class="section">
+            <div className="section">
                 <h4>Useful Links</h4>
                 <ul>
                     <li>Nav 1</li>
@@ -12,7 +12,7 @@ function Footer() {
                 </ul>
             </div>
 
-            <div class="section">
+            <div className="section">
                 <h4>Useful Links</h4>
                 <ul>
                     <li>Nav 1</li>
@@ -21,7 +21,7 @@ function Footer() {
                 </ul>
             </div>
 
-            <div class="section">
+            <div className="section">
                 <h4>Useful Links</h4>
                 <ul>
                     <li>Nav 1</li>
